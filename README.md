@@ -1,6 +1,6 @@
 # Description
 
-> **HTML Helper** is a complete PHP class which provide an awesome markup which will make your HTML rendering easier than ever.
+ **HTML Helper** is a complete PHP class which provide an awesome markup which will make your HTML rendering easier than ever.
 
 ----------
 
@@ -35,12 +35,13 @@ include_once(dirname(__FILE__) . '/class.html.php');
 ```php
 // Prints the specified doctype.
 // -------------------------------------
-// See all the available doctypes for input below this code section.
-// -------------------------------------
 // This below line will print the default doctype, which is HTML5 (<!DOCTYPE html>)
 echo HTML::Doctype();
+
+// See all the available doctypes for input below this code section.
 ```
 
+##### Availabe Doctypes
 ```
 html5			-> HTML5
 xhtml11			-> (x)HTML 1.1
