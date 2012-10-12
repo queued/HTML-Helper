@@ -47,7 +47,7 @@ xhtml11			-> (x)HTML 1.1
 xhtml1-strict 	-> (x)HTML 1.0 Strict
 xhtml1-trans 	-> (x)HTML 1.0 Transitional
 xhtml1-frame 	-> (x)HTML 1.0 Frameset
-html4-strict		-> HTML4 Strict
+html4-strict	-> HTML4 Strict
 html4-trans		-> HTML4 Transitional
 html4-frame		-> HTML4 Frameset
 ```
