@@ -30,7 +30,7 @@ include_once(dirname(__FILE__) . '/class.html.php');
 * [HTML::Filter_XSS();](#xss)
 * [HTML::Version();](#version)
 
-#### _HTML::Doctype('type');_
+##### Doctype
 
 ```php
 // Prints the specified doctype.
@@ -41,7 +41,7 @@ echo HTML::Doctype();
 // See all the available doctypes for input below this code section.
 ```
 
-##### Availabe Doctypes
+###### Availabe Doctypes
 ```
 html5			-> HTML5
 xhtml11			-> (x)HTML 1.1
