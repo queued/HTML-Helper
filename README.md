@@ -40,8 +40,6 @@ Return the specified doctype
 ```php
 // The below line will print the default doctype, which is HTML5: <!DOCTYPE html>
 echo HTML::Doctype();
-
-// See all the available doctypes below this code section.
 ```
 
 >#### _Availabe Doctypes_
