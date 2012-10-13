@@ -27,10 +27,10 @@ So when you're going to set the `$attributes` variable in some function, always 
 * [HTML::Image(string $src, mixed $attributes);](#image)
 * [HTML::Anchor(string $url, string $label, mixed $attributes);](#anchor)
 * [HTML::Email(string $email, string $label);](#email)
-* [HTML::LineBreak(integer $count);](#linebreak)
+* [HTML::LineBreak(integer $count);](#line-break)
 * [HTML::Space(integer $count);](#space)
 * [HTML::Form(string $action, array $fields, string $name, string $method, string $enctype);](#form)
-* [HTML::Open(string $tag, mixed $attributes, array $li_items);](#openclose)
+* [HTML::Open(string $tag, mixed $attributes, array $li_items);](#open--close)
 * [HTML::Close();](#open--close)
 * [HTML::Version();](#version)
 
