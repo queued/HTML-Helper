@@ -5,7 +5,12 @@
 ----------
 
 # Feedback
- Feel free to contact me via [Email](mailto:miranda@lunnaly.com) anytime you want. If you like this class and use it in somewhere, please, send me a feedback with your opinion about my job. If you are interested in my job, hire me at [Lunnaly](http://lunnaly.com "Lunnaly's Website"). Fork this repo, I appreciate! =)
+ Feel free to contact me via [Email](mailto:miranda@lunnaly.com) anytime you want. If you like this class and use it in somewhere, please, send me a feedback with your opinion about my job. If you are interested in my job, hire me at [Lunnaly](http://lunnaly.com "Lunnaly's Website").
+
+----------
+
+# Fork it!
+Please fork this project and help me with the development, I appreciate! =)
 
 ----------
 
