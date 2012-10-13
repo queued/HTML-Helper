@@ -18,7 +18,9 @@ include_once(dirname(__FILE__) . '/class.html.php');
 ----------
 
 # The $attributes variable
-This variable can be a string like this: `'attribute1="value1" attribute2="value2"'`, or an array like this: `array('attribute1' => 'value1', 'attribute2' => 'value2');`. So when you're going to set the `$attributes` variable in some function, always remember the style of code that it must to be.
+This variable can be a string like this: `'attribute1="value1" attribute2="value2"'`.
+Or an array like this: `array('attribute1' => 'value1', 'attribute2' => 'value2');`.
+So when you're going to set the `$attributes` variable in some function, always remember the style of code that it must to be.
 
 # Functions
 * [HTML::Doctype(string $type);](#doctype)
