@@ -41,13 +41,13 @@ abstract class HTML {
 		}
 
 		if (is_array($attributes)) {
-			$att = '';
+			$attr = '';
 
 			foreach ($attributes as $key => $val) {
-				$att .= ' ' . $key . '="' . $val . '"';
+				$attr .= ' ' . $key . '="' . $val . '"';
 			}
 
-			return $att;
+			return $attr;
 		}
 	}
 
