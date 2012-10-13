@@ -2,7 +2,7 @@
 /**
  * @abstract
  * @author 		Miranda <miranda@lunnaly.com>
- * @version 	1.0.0
+ * @version 	1.0.2
  * @link 		https://github.com/over9k/HTML-Helper
  * @license 	http://labs.lunnaly.com/licenses/github/ GitHub Open Source 1.0
  * @package 	HTML-Helper
@@ -37,7 +37,7 @@ abstract class HTML {
 	*/
 	private static function parse_attr($attributes) {
 		if (is_string($attributes)) {
-			return (!empty($attributes)) ? ' ' . $attributes : '';
+			return (!empty($attributes)) ? ' ' . trim($attributes) : '';
 		}
 
 		if (is_array($attributes)) {
@@ -172,18 +172,18 @@ abstract class HTML {
 	 *
 	 * @static
 	 * @param string $url the URL
-	 * @param string $name the link value
+	 * @param string $label the link value
 	 * @param mixed $attributes Custom attributes (must be a valid attribute for the <a></a> tag)
 	 * @return string The formated <a></a> tag
 	 */
-	public static function Anchor($url, $name = null, $attributes = null) {
-		$name = (!empty($name)) ? $name : $url;
+	public static function Anchor($url, $label = null, $attributes = null) {
+		$label = (!empty($label)) ? $label : $url;
 
 		if (isset($attributes) && !empty($attributes)) {
 			$attributes = self::parse_attr($attributes);
 		}
 
-		return '<a href="' . $uri . '"' . $attributes . '>' . $name . '</a>';
+		return '<a href="' . $uri . '"' . $attributes . '>' . $label . '</a>';
 	}
 
 	/**
@@ -191,18 +191,18 @@ abstract class HTML {
 	 *
 	 * @static
 	 * @param $email
-	 * @param string $name The anchor value.
+	 * @param string $label The anchor value.
 	 * @param mixed $attributes Custom attributes (must be a valid attribute for the <a></a> tag)
 	 * @return string The formated <a></a> tag with the 'href' attribute set for: mailto:$email
 	 */
-	public static function Email($email, $name = null, $attributes = null)	{
-		$name = (!empty($name)) ? $name : $email;
+	public static function Email($email, $label = null, $attributes = null)	{
+		$label = (!empty($label)) ? $label : $email;
 
 		if (isset($attributes) && !empty($attributes)) {
 			$attributes = self::parse_attr($attributes);
 		}
 
-		$html = '<a href="mailto:' . $email . '"' . $attributes . '>' . $name . '</a>';
+		$html = '<a href="mailto:' . $email . '"' . $attributes . '>' . $label . '</a>';
 		return $html;
 	}
 
