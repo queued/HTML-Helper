@@ -12,8 +12,8 @@ abstract class HTML {
 	 * $tag Tell what is the current open tag for close it later.
 	 *
 	 * @static
-	 * @access private
-	 * @var string What is the current open tag?
+	 * @access 	private
+	 * @var 	string What is the current open tag?
 	 */
 	private static $tag = '';
 
