@@ -266,7 +266,7 @@ abstract class HTML {
 			}
 		}
 
-		return '<' . self::$tag . $attributes . '>';
+		return '<' . self::$tag . $attributes . '>' . PHP_EOL;
 	}
 
 	/**
@@ -276,7 +276,7 @@ abstract class HTML {
 	 * @access public
 	 */
 	public static function Close() {
-		return '</' . self::$tag . '>';
+		return PHP_EOL . '</' . self::$tag . '>';
 	}
 
 	/**
