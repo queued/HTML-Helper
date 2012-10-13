@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>HTML by over9k</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">HTML</h1>
+        <p class="header">This is a complete PHP class which provide an awesome markup that will make your HTML rendering easier than ever.</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/over9k/HTML-Helper/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/over9k/HTML-Helper/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/over9k/HTML-Helper">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/over9k">over9k</a></p>
+
+
+      </header>
+      <section>
+        <h1>Description</h1>
+
+<p><strong>HTML Helper</strong> is a complete PHP class which provide a really simple markup which will make your HTML rendering easier than ever.</p>
+
+<hr><h1>Feedback</h1>
+
+<p>Feel free to contact me via <a href="mailto:miranda@lunnaly.com">Email</a> anytime you want. If you like this class and use it in somewhere, please, send me a feedback with your opinion about my job. If you are interested in my job, hire me at <a href="http://lunnaly.com" title="Lunnaly's Website">Lunnaly</a>. Fork this repo, I appreciate! =)</p>
+
+<hr><h1>Installing</h1>
+
+<div class="highlight"><pre><span class="c1">// Just include the class and you're ready to rock! :)</span>
+<span class="k">include_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/class.html.php'</span><span class="p">);</span>
+</pre></div>
+
+<hr><h1>The $attributes variable</h1>
+
+<p>This variable can be a string like this: <code>'attribute1="value1" attribute2="value2"'</code>.
+Or an array like this: <code>array('attribute1' =&gt; 'value1', 'attribute2' =&gt; 'value2');</code>.
+So when you're going to set the <code>$attributes</code> variable in some function, always remember the style of code that it must to be.</p>
+
+<h1>Functions</h1>
+
+<ul>
+<li><a href="#doctype">HTML::Doctype(string $type);</a></li>
+<li><a href="#image">HTML::Image(string $src, mixed $attributes);</a></li>
+<li><a href="#anchor">HTML::Anchor(string $url, string $label, mixed $attributes);</a></li>
+<li><a href="#email">HTML::Email(string $email, string $label);</a></li>
+<li><a href="#line-break">HTML::LineBreak(integer $count);</a></li>
+<li><a href="#space">HTML::Space(integer $count);</a></li>
+<li><a href="#form">HTML::Form(string $action, array $fields, string $name, string $method, string $enctype);</a></li>
+<li><a href="#open--close">HTML::Open(string $tag, mixed $attributes, array $li_items);</a></li>
+<li><a href="#open--close">HTML::Close();</a></li>
+<li><a href="#version">HTML::Version();</a></li>
+</ul><h3>Doctype</h3>
+
+<p>Return the specified doctype</p>
+
+<div class="highlight"><pre><span class="c1">// The below line will print the default doctype, which is HTML5: &lt;!DOCTYPE html&gt;</span>
+<span class="k">echo</span> <span class="nx">HTML</span><span class="o">::</span><span class="na">Doctype</span><span class="p">();</span>
+</pre></div>
+
+<blockquote>
+<h4><em>Availabe Doctypes</em></h4>
+
+<pre><code>html5           -&gt; HTML5
+xhtml11         -&gt; (x)HTML 1.1
+xhtml1-strict   -&gt; (x)HTML 1.0 Strict
+xhtml1-trans    -&gt; (x)HTML 1.0 Transitional
+xhtml1-frame    -&gt; (x)HTML 1.0 Frameset
+html4-strict    -&gt; HTML4 Strict
+html4-trans     -&gt; HTML4 Transitional
+html4-frame     -&gt; HTML4 Frameset
+</code></pre>
+</blockquote>
+
+<h3>Image</h3>
+
+<p>Returns the <code>&lt;img /&gt;</code> tag</p>
+
+<div class="highlight"><pre><span class="c1">// The below line will print: &lt;img src="http://example.com/location/to/image.png" border="0" /&gt;</span>
+<span class="k">echo</span> <span class="nx">HTML</span><span class="o">::</span><span class="na">Image</span><span class="p">(</span><span class="s1">'http://example.com/location/to/image.png'</span><span class="p">);</span>
+</pre></div>
+
+<h3>Anchor</h3>
+
+<p>Returns the <code>&lt;a&gt;&lt;/a&gt;</code> with the specified attributes.</p>
+
+<div class="highlight"><pre><span class="c1">// The below line will print: &lt;a href="http://lunnaly.com" target="_blank" title="Visit Lunnaly's Website"&gt;Lunnaly&lt;/a&gt;</span>
+<span class="k">echo</span> <span class="nx">HTML</span><span class="o">::</span><span class="na">Anchor</span><span class="p">(</span><span class="s1">'http://lunnaly.com'</span><span class="p">,</span> <span class="s1">'Lunnaly'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">'target'</span> <span class="o">=&gt;</span> <span class="s1">'_blank'</span><span class="p">,</span> <span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="s1">'Visit Lunnaly\'s Website'</span><span class="p">));</span>
+</pre></div>
+
+<h3>Email</h3>
+
+<p>Returns a formated 'mailto' link.</p>
+
+<div class="highlight"><pre><span class="c1">// The below line will print: &lt;a href="mailto:email@site.com"&gt;My Email&lt;/a&gt;</span>
+<span class="k">echo</span> <span class="nx">HTML</span><span class="o">::</span><span class="na">Email</span><span class="p">(</span><span class="s1">'email@site.com'</span><span class="p">,</span> <span class="s1">'My Email'</span><span class="p">);</span>
+</pre></div>
+
+<h3>Line break</h3>
+
+<p>Returns the <code>&lt;br /&gt;</code> (break) tag.</p>
+
+<div class="highlight"><pre><span class="c1">// The below line will print &lt;br /&gt;&lt;br /&gt;&lt;br /&gt; (3 times &lt;br /&gt;)</span>
+<span class="k">echo</span> <span class="nx">HTML</span><span class="o">::</span><span class="na">LineBreak</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</pre></div>
+
+<h3>Space</h3>
+
+<p>Returns the <code>&amp;nbsp;</code> (white space) entity .</p>
+
+<div class="highlight"><pre><span class="c1">// The below line will print &amp;nbsp;&amp;nbsp;&amp;nbsp; (3 times &amp;nbsp;)</span>
+<span class="k">echo</span> <span class="nx">HTML</span><span class="o">::</span><span class="na">Space</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</pre></div>
+
+<h3>Form</h3>
+
+<p>Create the structure following: <code>&lt;form&gt;$fields&lt;/form&gt;</code>.</p>
+
+<div class="highlight"><pre><span class="c1">// The below line will print a 'post' form with the following 'action' attribute: 'my-file.php' and 2 fields which are: 'username' and 'password'.</span>
+<span class="k">echo</span> <span class="nx">HTML</span><span class="o">::</span><span class="na">Form</span><span class="p">(</span><span class="s1">'my-file.php'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">'text'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">'username'</span><span class="p">,</span> <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'username'</span><span class="p">,</span> <span class="s1">'placeholder'</span> <span class="o">=&gt;</span> <span class="s1">'I\'m a text field! =)'</span><span class="p">),</span> <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">'password'</span><span class="p">,</span> <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'password'</span><span class="p">,</span> <span class="s1">'placeholder'</span> <span class="o">=&gt;</span> <span class="s1">'I\'m a password input! =)'</span><span class="p">)));</span>
+</pre></div>
+
+<blockquote>
+<h4><em>HTML::Form() Usage</em></h4>
+
+<pre><code>echo HTML::Form(the 'action' file, an array with the following structure: type =&gt; array(attribute =&gt; value));
+That's all you need to print a form. =)
+</code></pre>
+</blockquote>
+
+<h3>Open &amp; Close</h3>
+
+<p>Open a tag and pass the specified attributes to the same.</p>
+
+<div class="highlight"><pre><span class="c1">// The below line will print an opened tag</span>
+<span class="k">echo</span> <span class="nx">HTML</span><span class="o">::</span><span class="na">Open</span><span class="p">(</span><span class="s1">'tag'</span><span class="p">,</span> <span class="s1">'attribute="value"'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s1">'My content goes here'</span><span class="p">;</span>
+<span class="c1">// After you've done inserting the content, you must close the tag.</span>
+<span class="k">echo</span> <span class="nx">HTML</span><span class="o">::</span><span class="na">Close</span><span class="p">();</span>
+</pre></div>
+
+<h3>Version</h3>
+
+<p>Return the script version (major.minor.release)</p>
+
+<div class="highlight"><pre><span class="c1">// Usage</span>
+<span class="k">echo</span> <span class="nx">HTML</span><span class="o">::</span><span class="na">Version</span><span class="p">();</span>
+</pre></div>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
