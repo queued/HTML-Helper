@@ -1,9 +1,9 @@
 <?php
 /**
  * @abstract
- * @author 		Miranda <miranda@lunnaly.com>
+ * @author 	Miranda <miranda@lunnaly.com>
  * @version 	1.0.6
- * @link 		https://github.com/over9k/HTML-Helper
+ * @link 	https://github.com/over9k/HTML-Helper
  * @license 	http://labs.lunnaly.com/licenses/github/ GitHub Open Source 1.0
  * @package 	HTML-Helper
  */
@@ -18,10 +18,8 @@ abstract class HTML {
 	private static $tag = '';
 
 	/**
-	 * Script version
+	 * What is the current class version?
 	 *
-	 * @static
-	 * @access private
 	 * @const string The current script version
 	 */
 	const VERSION = '1.0.6';
@@ -99,6 +97,16 @@ abstract class HTML {
 		}
 	}
 
+	/**
+	 * ONLY FOR THIS CLASS (self)
+	 * self::filter description
+	 *
+	 * @static
+	 * @access 	private
+	 * @param  	string $str The input string to filter
+	 * @param  	string $mode The filter mode
+	 * @return 	mixed May return the filtered string or may return null if the $mode variable isn't set
+	 */
 	private static function filter($str, $mode) {
 		switch($mode) {
 			case 'strip':
@@ -125,11 +133,12 @@ abstract class HTML {
 	}
 
 	/**
-	 * Generates a HTML document type declaration
+	 * Generates a HTML document type
 	 *
 	 * @static
-	 * @param string $type Type of the document
-	 * @return string
+	 * @access 	public
+	 * @param 	string $type Type of the document
+	 * @return 	string
 	 */
 	public static function Doctype($type = 'html5') {
 		$doctypes = array(
@@ -155,9 +164,10 @@ abstract class HTML {
 	 * Creates the <img /> tag
 	 *
 	 * @static
-	 * @param string $src Where is the image?
-	 * @param mixed $attributes Custom attributes (must be a valid attribute for the <img /> tag)
-	 * @return string The formated <img /> tag
+	 * @access 	public
+	 * @param 	string $src Where is the image?
+	 * @param 	mixed $attributes Custom attributes (must be a valid attribute for the <img /> tag)
+	 * @return 	string The formated <img /> tag
 	 */
 	public static function Image($src, $attributes = '') {
 		if (isset($attributes) && !empty($attributes)) {
@@ -171,10 +181,11 @@ abstract class HTML {
 	 * Creates a HTML Anchor link
 	 *
 	 * @static
-	 * @param string $url the URL
-	 * @param string $label the link value
-	 * @param mixed $attributes Custom attributes (must be a valid attribute for the <a></a> tag)
-	 * @return string The formated <a></a> tag
+	 * @access 	public
+	 * @param 	string $url the URL
+	 * @param 	string $label the link value
+	 * @param 	mixed $attributes Custom attributes (must be a valid attribute for the <a></a> tag)
+	 * @return 	string The formated <a></a> tag
 	 */
 	public static function Anchor($url, $label = null, $attributes = null) {
 		$label = (!empty($label)) ? $label : $url;
@@ -190,10 +201,11 @@ abstract class HTML {
 	 * Generates a "mailto" link
 	 *
 	 * @static
-	 * @param $email
-	 * @param string $label The anchor value.
-	 * @param mixed $attributes Custom attributes (must be a valid attribute for the <a></a> tag)
-	 * @return string The formated <a></a> tag with the 'href' attribute set for: mailto:$email
+	 * @access 	public
+	 * @param 	$email
+	 * @param 	string $label The anchor value.
+	 * @param 	mixed $attributes Custom attributes (must be a valid attribute for the <a></a> tag)
+	 * @return 	string The formated <a></a> tag with the 'href' attribute set for: mailto:$email
 	 */
 	public static function Email($email, $label = null, $attributes = null)	{
 		$label = (!empty($label)) ? $label : $email;
@@ -210,8 +222,9 @@ abstract class HTML {
 	 * HTML <br /> tag
 	 *
 	 * @static
-	 * @param int $count How many line breaks?
-	 * @return string
+	 * @access 	public
+	 * @param 	int $count How many line breaks?
+	 * @return 	string
 	 */
 	public static function LineBreak($count = 1) {
 		return str_repeat('<br />', $count) . PHP_EOL;
@@ -221,13 +234,25 @@ abstract class HTML {
 	 * Returns non-breaking space entities
 	 *
 	 * @static
-	 * @param int $count How many spaces?
-	 * @return string
+	 * @access 	public
+	 * @param 	int $count How many spaces?
+	 * @return 	string
 	 */
 	public static function Space($count = 1) {
 		return str_repeat('&nbsp;', $count);
 	}
 
+	/**
+	 * HTML::Form() -> Creates the <form> tag with the specified variables.
+	 *
+	 * @static
+	 * @access 	public
+	 * @param 	string $action The action attribute value.
+	 * @param 	array $fields What is the form fields?
+	 * @param 	string $name The form name
+	 * @param 	string $method The form method (post or get)
+	 * @param 	string $enctype The form enctype
+	 */
 	public static function Form($action, $fields, $name = null, $method = 'post', $enctype = 'multipart/form-data') {
 		$name = (isset($name) && !empty($name)) ? ' name="' . $name . '"' : null;
 		$method = (isset($method)) ? ' method="' . $method . '"': null;
@@ -243,11 +268,11 @@ abstract class HTML {
 	 * HTML::Open('tag') -> Opens a HTML tag
 	 *
 	 * @static
-	 * @access private
-	 * @param string $tag Which tag we're gonna open?
-	 * @param mixed $attributes Custom attributes (must be a valid attribute for the specified tag)
-	 * @param array $li_items Some array with items for <ul> or <ol> tags
-	 * @return string Return the opened tag (<$tag>)
+	 * @access 	private
+	 * @param 	string $tag Which tag we're gonna open?
+	 * @param 	mixed $attributes Custom attributes (must be a valid attribute for the specified tag)
+	 * @param 	array $li_items Some array with items for <ul> or <ol> tags
+	 * @return 	string Return the opened tag (<$tag>)
 	 */
 	public static function Open($tag, $attributes = null, $li_items = array()) {
 		self::$tag = strtolower($tag);
@@ -273,7 +298,7 @@ abstract class HTML {
 	 * HTML::Close() -> Close the current open tag
 	 *
 	 * @static
-	 * @access public
+	 * @access 	public
 	 */
 	public static function Close() {
 		return PHP_EOL . '</' . self::$tag . '>' . PHP_EOL;
@@ -283,10 +308,10 @@ abstract class HTML {
 	 * HTML::Filter_XSS($str, $args) -> Filter some string with the params into $args
 	 *
 	 * @static
-	 * @access public
-	 * @param string $str String to clean the possible XSS attack.
-	 * @param array $args The array with the parameters
-	 * @return string The safe string.
+	 * @access 	public
+	 * @param 	string $str String to clean the possible XSS attack.
+	 * @param 	array $args The array with the parameters
+	 * @return 	string The safe string.
 	 */
 	public static function Filter_XSS($str, $args) {
 		/* Loop trough the args and apply the filters. */
@@ -328,8 +353,9 @@ abstract class HTML {
 
 	/**
 	 * HTML::Version() -> Return the script version
+	 *
 	 * @static
-	 * @access public
+	 * @access 	public
 	 */
 	public static function Version() {
 		return self::VERSION;
