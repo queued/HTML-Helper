@@ -207,7 +207,7 @@ abstract class HTML {
 	}
 
 	/**
-	 * HTML BR tag
+	 * HTML <br /> tag
 	 *
 	 * @static
 	 * @param int $count How many line breaks?
@@ -280,7 +280,7 @@ abstract class HTML {
 	}
 
 	/**
-	 * HTML::Clean_XSS($str, $args) -> Filter some string with the params into $args
+	 * HTML::Filter_XSS($str, $args) -> Filter some string with the params into $args
 	 *
 	 * @static
 	 * @access public
