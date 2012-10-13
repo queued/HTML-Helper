@@ -105,7 +105,6 @@ echo HTML::Form('my-file.php', array('text' => array('id' => 'username', 'name' 
 > #### _HTML::Form() Usage_
 ```
 echo HTML::Form(the 'action' file, an array with the following structure: type => array(attribute => value));
-
 That's all you need to print a form. =)
 ```
 
