@@ -2,7 +2,7 @@
 /**
  * @abstract
  * @author 		Miranda <miranda@lunnaly.com>
- * @version 	1.0.2
+ * @version 	1.0.6
  * @link 		https://github.com/over9k/HTML-Helper
  * @license 	http://labs.lunnaly.com/licenses/github/ GitHub Open Source 1.0
  * @package 	HTML-Helper
@@ -24,7 +24,7 @@ abstract class HTML {
 	 * @access private
 	 * @const string The current script version
 	 */
-	const VERSION = '1.0.2';
+	const VERSION = '1.0.6';
 
 	/**
 	* ONLY FOR THIS CLASS (self)
