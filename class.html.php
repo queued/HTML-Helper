@@ -24,7 +24,7 @@ abstract class HTML {
 	 * @access private
 	 * @const string The current script version
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '1.0.2';
 
 	/**
 	* ONLY FOR THIS CLASS (self)
