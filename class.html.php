@@ -296,7 +296,7 @@ abstract class HTML {
 			switch($type) {
 				case '%':
 					/* %variables: HTML tags are stripped of from the string
-					before it is in inserted. */
+					before it's inserted. */
 					$safe = self::filter($data, 'strip');
 					break;
 				case '!':
