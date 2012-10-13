@@ -1,6 +1,6 @@
 # Description
 
- **HTML Helper** is a complete PHP class which provide an awesome markup which will make your HTML rendering easier than ever.
+ **HTML Helper** is a complete PHP class which provide a really simple markup which will make your HTML rendering easier than ever.
 
 ----------
 
@@ -17,6 +17,9 @@ include_once(dirname(__FILE__) . '/class.html.php');
 
 ----------
 
+# The $attributes variable
+This variable can be a string like this: `'attribute1="value1" attribute2="value2"'`, or an array like this: `array('attribute1' => 'value1', 'attribute2' => 'value2');`. So when you're going to set the `$attributes` variable in some function, always remember the style of code that it must to be.
+
 # Functions
 * [HTML::Doctype(string $type);](#doctype)
 * [HTML::Image(string $src, mixed $attributes);](#image)
@@ -29,7 +32,7 @@ include_once(dirname(__FILE__) . '/class.html.php');
 * [HTML::Close();](#openclose)
 * [HTML::Version();](#version)
 
-#### Doctype
+### Doctype
 Return the specified doctype
 
 ```php
@@ -39,7 +42,7 @@ echo HTML::Doctype();
 // See all the available doctypes for input below this code section.
 ```
 
->##### _Availabe Doctypes_
+>#### _Availabe Doctypes_
 ```
 html5			-> HTML5
 xhtml11			-> (x)HTML 1.1
@@ -51,7 +54,7 @@ html4-trans		-> HTML4 Transitional
 html4-frame		-> HTML4 Frameset
 ```
 
-#### Image
+### Image
 Returns the `<img />` tag
 
 ```php
@@ -59,7 +62,7 @@ Returns the `<img />` tag
 echo HTML::Image('http://example.com/location/to/image.png');
 ```
 
-#### Anchor
+### Anchor
 Returns the `<a></a>` with the specified attributes.
 
 ```php
@@ -67,7 +70,7 @@ Returns the `<a></a>` with the specified attributes.
 echo HTML::Anchor('http://lunnaly.com', 'Lunnaly', array('target' => '_blank'));
 ```
 
-#### Email
+### Email
 Returns a formated 'mailto' link.
 
 ```php
@@ -75,7 +78,7 @@ Returns a formated 'mailto' link.
 echo HTML::Email('email@site.com', 'My Email');
 ```
 
-#### Line break
+### Line break
 Returns the `<br />` (break) tag.
 
 ```php
@@ -83,15 +86,15 @@ Returns the `<br />` (break) tag.
 echo HTML::LineBreak(3);
 ```
 
-#### Space
-Returns the `&nbsp;` (white space).
+### Space
+Returns the `&nbsp;` (white space) entity .
 
 ```php
 // The below line will print &nbsp;&nbsp;&nbsp; (3 times &nbsp;)
 echo HTML::Space(3);
 ```
 
-#### Form
+### Form
 Create the structure following: `<form>$fields</form>`.
 
 ```php
@@ -99,14 +102,14 @@ Create the structure following: `<form>$fields</form>`.
 echo HTML::Form('my-file.php', array('text' => array('id' => 'username', 'name' => 'username', 'placeholder' => 'I\'m a text field! =)'), 'password' => array('id' => 'password', 'name' => 'password', 'placeholder' => 'I\'m a password input! =)')));
 ```
 
-> ##### _HTML::Form() Usage_
+> #### _HTML::Form() Usage_
 ```
 echo HTML::Form(the 'action' file, an array with the following structure: type => array(attribute => value));
 
 That's all you need to print a form. =)
 ```
 
-#### Open & Close
+### Open & Close
 Open a tag and pass the specified attributes to the same.
 
 ```php
@@ -117,7 +120,7 @@ echo 'My content goes here';
 echo HTML::Close();
 ```
 
-#### Version
+### Version
 Return the script version (major.minor.build)
 
 ```php
