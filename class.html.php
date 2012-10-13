@@ -214,7 +214,7 @@ abstract class HTML {
 	 * @return string
 	 */
 	public static function LineBreak($count = 1) {
-		return str_repeat('<br />', $count);
+		return str_repeat('<br />', $count) . PHP_EOL;
 	}
 
 	/**
@@ -234,7 +234,7 @@ abstract class HTML {
 		$enctype = (isset($enctype)) ? ' enctype="' . $enctype . '"': null;
 		$html = '<form action="' . $action . '"' . $name . $method . $enctype . '>' . PHP_EOL;
 		$html .= self::parse_fields($fields);
-		$html .= '</form>';
+		$html .= '</form>' . PHP_EOL;
 
 		return $html;
 	}
@@ -276,7 +276,7 @@ abstract class HTML {
 	 * @access public
 	 */
 	public static function Close() {
-		return PHP_EOL . '</' . self::$tag . '>';
+		return PHP_EOL . '</' . self::$tag . '>' . PHP_EOL;
 	}
 
 	/**
