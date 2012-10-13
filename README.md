@@ -122,7 +122,7 @@ echo HTML::Close();
 ```
 
 ### Version
-Return the script version (major.minor.build)
+Return the script version (major.minor.release)
 
 ```php
 // Usage
