@@ -246,7 +246,7 @@ abstract class HTML {
 	 * @access private
 	 * @param string $tag Which tag we're gonna open?
 	 * @param mixed $attributes Custom attributes (must be a valid attribute for the specified tag)
-	 * @param array $items Some array with items for <ul> or <ol> tags
+	 * @param array $li_items Some array with items for <ul> or <ol> tags
 	 * @return string Return the opened tag (<$tag>)
 	 */
 	public static function Open($tag, $attributes = null, $li_items = array()) {
@@ -259,10 +259,10 @@ abstract class HTML {
 		if ($tag == 'ul' || $tag == 'ol') {
 			if (!empty($attributes['li_class'])) {
 				$list = self::list_item($li_items, $attributes['li_class']);
-				return '<' . self::$tag . $attributes . '>' . PHP_EOL . $list;
+				return '<' . self::$tag . $attributes . '>' . PHP_EOL . $li_items;
 			} else {
 				$list = self::list_item($li_items);
-				return '<' . self::$tag . $attributes . '>' . PHP_EOL . $list;
+				return '<' . self::$tag . $attributes . '>' . PHP_EOL . $li_items;
 			}
 		}
 
