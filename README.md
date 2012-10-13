@@ -68,8 +68,8 @@ echo HTML::Image('http://example.com/location/to/image.png');
 Returns the `<a></a>` with the specified attributes.
 
 ```php
-// The below line will print: <a href="http://lunnaly.com" target="_blank" title="">Lunnaly</a>
-echo HTML::Anchor('http://lunnaly.com', 'Lunnaly', array('target' => '_blank'));
+// The below line will print: <a href="http://lunnaly.com" target="_blank" title="Visit Lunnaly's Website">Lunnaly</a>
+echo HTML::Anchor('http://lunnaly.com', 'Lunnaly', array('target' => '_blank', 'title' => 'Visit Lunnaly\'s Website'));
 ```
 
 ### Email
