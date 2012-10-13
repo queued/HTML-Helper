@@ -29,7 +29,7 @@ This variable can be a string like this: `'attribute1="value1" attribute2="value
 * [HTML::Space(integer $count);](#space)
 * [HTML::Form(string $action, array $fields, string $name, string $method, string $enctype);](#form)
 * [HTML::Open(string $tag, mixed $attributes, array $li_items);](#openclose)
-* [HTML::Close();](#openclose)
+* [HTML::Close();](#open--close)
 * [HTML::Version();](#version)
 
 ### Doctype
