@@ -47,7 +47,7 @@ Return the specified doctype
 echo HTML::Doctype();
 ```
 
->#### _Availabe Doctypes_
+>#### _Available Doctypes_
 ```
 html5			-> HTML5
 xhtml11			-> (x)HTML 1.1
