@@ -1,11 +1,11 @@
 <?php
 /**
  * @abstract
- * @author 	Miranda <miranda@lunnaly.com>
- * @version 	1.0.6
- * @link 	https://github.com/over9k/HTML-Helper
- * @license 	http://labs.lunnaly.com/licenses/github/ GitHub Open Source 1.0
- * @package 	HTML-Helper
+ * @author 		Miranda <miranda@lunnaly.com> & Gustavo <guustavo_59@hotmail.com>
+ * @version 	1.0.7
+ * @link 		https://github.com/over9k/HTML-Helper
+ * @license 	http://www.opensource.org/licenses/mit-license.php MIT License
+ * @package 	HTML Helper
  */
 abstract class HTML {
 	/**
@@ -22,7 +22,7 @@ abstract class HTML {
 	 *
 	 * @const string The current script version
 	 */
-	const VERSION = '1.0.6';
+	const VERSION = '1.0.7';
 
 	/**
 	* ONLY FOR THIS CLASS (self)
@@ -174,7 +174,10 @@ abstract class HTML {
 			$attributes = self::parse_attr($attributes);
 		}
 
-		return '<img src="' . $src . '"' . $attributes . ' border="0" />';
+		$border = (isset($attributes['border']) && !empty($attributes['border'])) ? $attributes['border'] : 'border="0" ';
+		$alt = (isset($attributes['alt']) && !empty($attributes['alt'])) ? $attributes['border'] : 'alt="" ';
+
+		return '<img src="' . $src . '"' . $attributes . ' ' . $border . $alt . '/>';
 	}
 
 	/**
