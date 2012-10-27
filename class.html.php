@@ -174,8 +174,8 @@ abstract class HTML {
 			$attributes = self::parse_attr($attributes);
 		}
 
-		$border = (isset($attributes['border']) && !empty($attributes['border'])) ? $attributes['border'] : 'border="0" ';
-		$alt = (isset($attributes['alt']) && !empty($attributes['alt'])) ? $attributes['border'] : 'alt="" ';
+		$border = (isset($attributes['border']) && !empty($attributes['border'])) ? $attributes['border'] . ' ' : 'border="0" ';
+		$alt = (isset($attributes['alt']) && !empty($attributes['alt'])) ? $attributes['alt'] . ' ' : 'alt="" ';
 
 		return '<img src="' . $src . '"' . $attributes . ' ' . $border . $alt . '/>';
 	}
