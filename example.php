@@ -1,5 +1,5 @@
 <?php
-include_once(dirname(__FILE__) . '/core/class.html.php');
+include_once(dirname(__FILE__) . '/class.html.php');
 
 echo HTML::Doctype();
 
