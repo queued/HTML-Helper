@@ -9,4 +9,5 @@ $fields = array(
 			   );
 
 echo HTML::Form('index.php', $fields);
-?>
+
+echo HTML::tag('div', array('class' => 'my-div'), 'My div content');
