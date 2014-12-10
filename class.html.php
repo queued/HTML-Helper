@@ -23,7 +23,7 @@ abstract class HTML {
 	 * @const string The current script version
 	 */
 	const VERSION = '1.0.7';
-
+        
 	/**
 	* ONLY FOR THIS CLASS (self)
 	* self::parse_attr($attributes) -> Parse out the attributes
@@ -302,10 +302,31 @@ abstract class HTML {
 	 *
 	 * @static
 	 * @access 	public
+         * @param string @tag
 	 */
-	public static function Close() {
-		return PHP_EOL . '</' . self::$tag . '>' . PHP_EOL;
+	public static function Close($tag = null) {
+            // load tag string from param if passed
+            $tagString = ($tag ? $tag : self::$tag );
+            // Return the closing tag
+            return '</' . $tagString . '>';
 	}
+        
+        /**
+         * HTML::tag()
+         * Renders a full html element with attributes and content 
+         * @author Ashley Finlayson <ash.finlayson@gmail.com>
+         * @param string $tag html element
+         * @param array $attributes
+         * @param string $content html content for the element
+         * @return string
+         */
+        public static function tag($tag, $attributes, $content)
+        {
+            // Attributes array to string
+            $attributeString = self::parse_attr($attributes);
+            // Returns full html tag
+            return '<' . $tag . ' ' .$attributeString . '>' . PHP_EOL . $content . self::Close($tag);
+        }
 
 	/**
 	 * HTML::Filter_XSS($str, $args) -> Filter some string with the params into $args
