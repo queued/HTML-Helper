@@ -197,7 +197,7 @@ abstract class HTML {
 			$attributes = self::parse_attr($attributes);
 		}
 
-		return '<a href="' . $uri . '"' . $attributes . '>' . $label . '</a>';
+		return '<a href="' . $url . '"' . $attributes . '>' . $label . '</a>';
 	}
 
 	/**
@@ -287,10 +287,10 @@ abstract class HTML {
 		if ($tag == 'ul' || $tag == 'ol') {
 			if (!empty($attributes['li_class'])) {
 				$list = self::list_item($li_items, $attributes['li_class']);
-				return '<' . self::$tag . $attributes . '>' . PHP_EOL . $li_items;
+				return '<' . self::$tag . $attributes . '>' . PHP_EOL . $list;
 			} else {
 				$list = self::list_item($li_items);
-				return '<' . self::$tag . $attributes . '>' . PHP_EOL . $li_items;
+				return '<' . self::$tag . $attributes . '>' . PHP_EOL . $list;
 			}
 		}
 
